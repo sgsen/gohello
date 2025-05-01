@@ -27,7 +27,8 @@ func AddToLList(firstNode *ListNode, value int) *ListNode {
 
 }
 
-func PrintList(firstNode *ListNode) {
+func PrintLList(firstNode *ListNode) {
+	fmt.Println("\nPrinting linked list...")
 	current := firstNode
 	for current.Next != nil {
 		fmt.Println(current.Val)
@@ -46,8 +47,25 @@ func CreateLLfromList(intList []int) *ListNode {
 	return newLinkedList
 }
 
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	PrintList(l1)
-	PrintList(l2)
+func ReverseLList(firstNode *ListNode) *ListNode {
+	currNode := firstNode
+	prevNode := (*ListNode)(nil)
+
+	for currNode != nil {
+		nextNode := currNode.Next
+		currNode.Next = prevNode
+		prevNode = currNode
+		currNode = nextNode
+
+	}
+	return prevNode
+}
+
+/* func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	// get the last item from list1 and update what the last item is for next time
+	l1
+	currentl2 := l2
+
 	return l1
 }
+*/

@@ -24,11 +24,14 @@ func main_two_sum() {
 
 func main() {
 	var l1 = []int{1, 2, 3}
-	var l2 = []int{4, 5, 6}
+	//var l2 = []int{4, 5, 6}
 
 	var ll1 *ListNode = CreateLLfromList(l1)
-	var ll2 *ListNode = CreateLLfromList(l2)
+	//var ll2 *ListNode = CreateLLfromList(l2)
 
-	addTwoNumbers(ll1, ll2)
+	PrintLList(ll1)
+	// addTwoNumbers(ll1, ll2)
+	revll1 := ReverseLList(ll1)
+	PrintLList(revll1)
 
 }
