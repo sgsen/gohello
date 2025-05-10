@@ -61,11 +61,42 @@ func ReverseLList(firstNode *ListNode) *ListNode {
 	return prevNode
 }
 
-/* func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	// get the last item from list1 and update what the last item is for next time
-	l1
-	currentl2 := l2
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+	var sumLL *ListNode = nil
+	var val1, val2, sumVal, digit int
+	var carry int = 0
 
-	return l1
+	current1 := l1
+	current2 := l2
+
+	for (current1 != nil) || (current2 != nil) {
+		val1 = 0
+		val2 = 0
+
+		if current1 != nil {
+			val1 = current1.Val
+			current1 = current1.Next
+		}
+
+		if current2 != nil {
+			val2 = current2.Val
+			current2 = current2.Next
+		}
+
+		sumVal = val1 + val2 + carry
+		carry = sumVal / 10
+		digit = sumVal % 10
+
+		// fmt.Printf("val1: %v, val2: %v, sumVal: %v, digit: %v, carry: %v\n", val1, val2, sumVal, digit, carry)
+
+		sumLL = AddToLList(sumLL, digit)
+
+	}
+	// deal with the case where there is a carry left over
+	if carry > 0 {
+		sumLL = AddToLList(sumLL, carry)
+	}
+
+	return sumLL
+
 }
-*/

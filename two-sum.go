@@ -58,3 +58,23 @@ func TwoSum2(nums []int, target int) []int {
 	fmt.Println("Map: ", prevValues)
 	return []int{}
 }
+
+func test_two_sum() {
+	//fmt.Println(quote.Go())
+
+	// test case 2
+	inputArray := []int{2, 7, 11, 15}
+	target := 9
+	fmt.Printf("Target Match: %v\n", TwoSum2(inputArray, target))
+
+	// test case 2
+	inputArray = []int{3, 2, 4}
+	target = 6
+	fmt.Printf("Target Match: %v\n", TwoSum2(inputArray, target))
+
+	// test case 3
+	inputArray = []int{3, 3}
+	target = 6
+	fmt.Printf("Target Match: %v\n", TwoSum2(inputArray, target))
+
+}
