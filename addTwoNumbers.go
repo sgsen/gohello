@@ -24,7 +24,6 @@ func AddToLList(firstNode *ListNode, value int) *ListNode {
 	// when you exit this while loop, you are pointing to the last node with current
 	current.Next = &newNode
 	return firstNode
-
 }
 
 func PrintLList(firstNode *ListNode) {
@@ -42,7 +41,6 @@ func CreateLLfromList(intList []int) *ListNode {
 	var newLinkedList *ListNode = nil
 	for _, value := range intList {
 		newLinkedList = AddToLList(newLinkedList, value)
-
 	}
 	return newLinkedList
 }
@@ -61,7 +59,7 @@ func ReverseLList(firstNode *ListNode) *ListNode {
 	return prevNode
 }
 
-func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	var sumLL *ListNode = nil
 	var val1, val2, sumVal, digit int
 	var carry int = 0
@@ -98,5 +96,4 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 
 	return sumLL
-
 }

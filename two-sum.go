@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func TwoSum1(nums []int, target int) []int {
-
 	contains := func(slice []int, val int) (bool, int) {
 		for idx, item := range slice {
 			if item == val {
@@ -60,7 +59,7 @@ func TwoSum2(nums []int, target int) []int {
 }
 
 func test_two_sum() {
-	//fmt.Println(quote.Go())
+	// fmt.Println(quote.Go())
 
 	// test case 2
 	inputArray := []int{2, 7, 11, 15}
@@ -76,5 +75,4 @@ func test_two_sum() {
 	inputArray = []int{3, 3}
 	target = 6
 	fmt.Printf("Target Match: %v\n", TwoSum2(inputArray, target))
-
 }
