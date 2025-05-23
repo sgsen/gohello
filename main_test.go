@@ -1,9 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
+
+type TestCase struct {
+	input  string
+	output int
+}
 
 func TestAddTwoNumbers(t *testing.T) {
 	// fmt.Println(quote.Go())
@@ -22,8 +26,18 @@ func TestAddTwoNumbers(t *testing.T) {
 }
 
 func TestLengthOfLongestSubstring(t *testing.T) {
-	fmt.Println("running test_lengthOfLongestSubstring...")
-	test_str := "hello"
-	str_length := lengthOfLongestSubstring(test_str)
-	fmt.Println("string length: ", str_length)
+	testCases := []TestCase{
+		{"abcabcbb", 3},
+		{"bbbbb", 1},
+		{"pwwkew", 3},
+	}
+
+	for _, tc := range testCases {
+		result := lengthOfLongestSubstring(tc.input)
+		expected := tc.output
+
+		if result != expected {
+			t.Errorf("Expected %d, but got %d", expected, result)
+		}
+	}
 }
