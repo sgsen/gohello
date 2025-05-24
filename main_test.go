@@ -30,6 +30,8 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 		{"abcabcbb", 3},
 		{"bbbbb", 1},
 		{"pwwkew", 3},
+		{"aab", 2},
+		{"aabaab!bb", 3},
 	}
 
 	for _, tc := range testCases {
@@ -37,7 +39,9 @@ func TestLengthOfLongestSubstring(t *testing.T) {
 		expected := tc.output
 
 		if result != expected {
-			t.Errorf("Expected %d, but got %d", expected, result)
+			t.Errorf("Failed %s. Expected %d, but got %d", tc.input, expected, result)
+		} else {
+			println("Passed: ", tc.input)
 		}
 	}
 }
