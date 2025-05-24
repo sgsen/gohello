@@ -1,6 +1,8 @@
 package main
 
-import "slices"
+import (
+	"slices"
+)
 
 func lengthOfLongestSubstring(s string) int {
 	globalMax := 0
@@ -19,11 +21,18 @@ func lengthOfLongestSubstring(s string) int {
 			}
 		} else {
 			// delete up to the existing occurence of value
-			subs = subs[valueIndex:]
+			subs = subs[valueIndex+1:]
+			// add the new item to the updated substring
+			subs = append(subs, strValue)
 			// update the current max
 			currentMax = len(subs)
 		}
 
+		/* fmt.Println("Current Character: ", strValue)
+		fmt.Println("Current Substring: ", subs)
+		println("Current Max: ", currentMax)
+		println("Global Max: ", globalMax)
+		*/
 	}
 	return globalMax
 }
